@@ -26,9 +26,15 @@ public class Bow : MonoBehaviour
     [Header("Haptics")]
     public HapticClipPlayer hapticClipPlayer;
 
+
+    [Header("Audio")]
+    public AudioClip bowReleaseSound;
+    private AudioSource bowAudioSource;
+
     private void Awake()
     {
         m_Animator = GetComponent<Animator>();
+        bowAudioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -127,6 +133,11 @@ public class Bow : MonoBehaviour
             {
                 hapticSource.Play();
             }
+        }
+
+        if (bowAudioSource != null && bowReleaseSound != null)
+        {
+            bowAudioSource.PlayOneShot(bowReleaseSound);
         }
     }
 }
