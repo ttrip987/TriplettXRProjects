@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class DoorFeatures : MonoBehaviour
+public class DoorFeatures : CoreFeatures
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Door Configurations")]
+    [SerializeField]
+    private Transform doorPivot;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
